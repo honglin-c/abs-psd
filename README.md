@@ -104,7 +104,7 @@ So we create a large initial deformation (feel free to try an even larger deform
 
 ## Citation
 ```
-@inproceedings{chen2024abs_eig,
+@inproceedings{chen2024abs_eval,
       title={Stabler Neo-Hookean Simulation: Absolute Eigenvalue Filtering for Projected Newton},
       author={Honglin Chen and Hsueh-Ti Derek Liu and David I.W. Levin and Changxi Zheng and Alec Jacobson},
       booktitle = {ACM SIGGRAPH 2024 Conference Proceedings},
