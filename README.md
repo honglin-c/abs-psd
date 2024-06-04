@@ -1,4 +1,4 @@
-# Stabler Neo-Hookean Simulation: Absolute Eigenvalue Filtering for Projected Newton
+# Stabler Neo-Hookean Simulation: <br> Absolute Eigenvalue Filtering for Projected Newton
 
 ### [Project Page](https://www.cs.columbia.edu/cg/local-deformation/)  | [Paper](https://arxiv.org/abs/2306.06550)
 
