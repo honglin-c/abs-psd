@@ -12,7 +12,8 @@ Official implementation for the paper:
 [Changxi Zheng](http://www.cs.columbia.edu/~cxz/)<sup>1</sup>, 
 [Alec Jacobson](https://www.cs.toronto.edu/~jacobson/)<sup>2,</sup><sup>3</sup>
 <br>
-> <sup>1</sup>Columbia University, <sup>2</sup>Adobe Research, <sup>3</sup>University of Toronto,  <sup>4</sup>Roblox Research, <br> <sup>5</sup>University of British Columbia, <sup>6</sup>NVIDIA <br>
+> <sup>1</sup>Columbia University, <sup>2</sup>Adobe Research, <sup>3</sup>University of Toronto,  <sup>4</sup>Roblox Research, <br> 
+  <sup>5</sup>University of British Columbia, <sup>6</sup>NVIDIA <br>
 > SIGGRAPH 2024 (Conference Track)
 
 
