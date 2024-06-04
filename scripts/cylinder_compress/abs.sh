@@ -1,0 +1,1 @@
+./example -n cylinder_20 -l compress_longest_axis -t 0.5

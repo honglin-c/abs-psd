@@ -1,0 +1,1 @@
+./example -n bob -l stretch_twist -t 1.2 --clamp

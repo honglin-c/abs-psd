@@ -1,0 +1,1 @@
+./example -n cube -l compress_longest_axis -t 0.3 -c 2e-6 

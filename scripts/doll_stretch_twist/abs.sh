@@ -1,0 +1,1 @@
+./example -n cheburashka -l stretch_twist_top -t 1.0

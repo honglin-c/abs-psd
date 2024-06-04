@@ -1,0 +1,1 @@
+./example -n mushroom -l stretch_shear -g 1.0

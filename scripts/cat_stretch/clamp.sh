@@ -1,0 +1,1 @@
+./example -n cat -l stretch -t 2.0 --clamp

@@ -2,7 +2,7 @@
 
 ### [Project Page](https://www.cs.columbia.edu/cg/local-deformation/)  | [Paper](https://arxiv.org/abs/2306.06550)
 
-<img src="https://github.com/honglin-c/local-deformation/blob/main/.github/images/teaser.png" width="800">
+<img src="https://github.com/honglin-c/abs-eval/blob/main/.github/images/teaser.png" width="800">
 
 Official implementation for the paper:
 > **[Stabler Neo-Hookean Simulation: Absolute Eigenvalue Filtering for Projected Newton](https://www.cs.columbia.edu/cg/local-deformation/)**  

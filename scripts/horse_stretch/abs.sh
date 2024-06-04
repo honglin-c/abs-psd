@@ -1,0 +1,1 @@
+./example -n horse -l stretch_front -g 1.0 
