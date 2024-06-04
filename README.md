@@ -28,7 +28,7 @@ make -j8
 
 ## Experiments
 
-To run the code, please run, e.g.,
+To run the code with our absolute eigenvalue projection strategy, please run, e.g.,
 ```
 sh ../scripts/micky_teaser/abs.sh
 ```
@@ -47,8 +47,6 @@ For more options, please see
 ```
 ./example --help
 ```
-
-====================================================================================================================
 
 ## What to verify our provided TinyAD by yourself?
 
