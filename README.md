@@ -7,12 +7,12 @@
 Official implementation for the paper:
 > **[Stabler Neo-Hookean Simulation: Absolute Eigenvalue Filtering for Projected Newton](https://www.cs.columbia.edu/cg/local-deformation/)**  
 > [Honglin Chen](https://www.cs.columbia.edu/~honglinchen/)<sup>1</sup>, 
-[Hsueh-Ti Derek Liu](https://www.dgp.toronto.edu/~hsuehtil/)<sup>4</sup><sup>5</sup>, 
-[David I.W. Levin](http://www.cs.toronto.edu/~diwlevin/)<sup>3</sup><sup>6</sup>, 
+[Hsueh-Ti Derek Liu](https://www.dgp.toronto.edu/~hsuehtil/)<sup>4,</sup><sup>5</sup>, 
+[David I.W. Levin](http://www.cs.toronto.edu/~diwlevin/)<sup>3,</sup><sup>6</sup>, 
 [Changxi Zheng](http://www.cs.columbia.edu/~cxz/)<sup>1</sup>, 
-[Alec Jacobson](https://www.cs.toronto.edu/~jacobson/)<sup>2</sup><sup>3</sup>
+[Alec Jacobson](https://www.cs.toronto.edu/~jacobson/)<sup>2,</sup><sup>3</sup>
 <br>
-> <sup>1</sup>Columbia University, <sup>2</sup>Adobe Research, <sup>3</sup>University of Toronto,  <sup>4</sup>Roblox Research,  <sup>5</sup>University of British Columbia, <sup>6</sup>Nvidia <br>
+> <sup>1</sup>Columbia University, <sup>2</sup>Adobe Research, <sup>3</sup>University of Toronto,  <sup>4</sup>Roblox Research, <br> <sup>5</sup>University of British Columbia, <sup>6</sup>NVIDIA <br>
 > SIGGRAPH 2024 (Conference Track)
 
 
