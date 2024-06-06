@@ -54,32 +54,48 @@ For more options, please see
 ./example --help
 ```
 
-## What to verify our provided TinyAD by yourself?
+<details>
+<summary>
+## What do we modify in TinyAD to achieve absolute eigenvalue projection?
+</summary>
 
-Git clone TinyAD (https://github.com/patr-schm/TinyAD) in the project folder,
-then comment out and change lines 71-75 in `TinyAD/include/TinyAD/Utils/HessianProjection.hh` to:
+We clone TinyAD (https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
+then comment out and change [lines 71-75 in `TinyAD/include/TinyAD/Utils/HessianProjection.hh`]([https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75]) to:
 ```
-  if (D(i, i) < 0)
-  {
-      D(i, i) = -D(i, i);
-      all_positive = false;
+  if (_eigenvalue_eps < 0) {
+      // project to absolute value if the eigenvalue threshold is less than 0
+      if (D(i, i) < 0)
+      {
+          D(i, i) = -D(i, i);
+          all_positive = false;
+      }
+  }
+  else {
+      // project to epsilon otherwise
+      if (D(i, i) < _eigenvalue_eps)
+      {
+          D(i, i) = _eigenvalue_eps;
+          all_positive = false;
+      }
   }
 ```
-please see [https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75].
-Then you have the abs eigenvalue projection! Wanna try it now? :)
-(Remember to change it back if you want the eigenvalue clamping strategy instead. )
+So we project to absolute value if the eigenvalue threshold is less than 0, and to a small value epsilon (e.g., 0 or 1e-3) otherwise.
 
+</details>
+
+<details>
+<summary>
 ## Yet another way to verify our method (which is slightly more complicated)
+</summary>
 
-1. Git clone Hobak (https://github.com/theodorekim/HOBAKv1/) in a different folder.
+1. Git clone [Hobak](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636) in a different folder.
 
-2. Change lines 139-141 in `src/Hyperelastic/Volume/SNH.cpp` to:
+2. Change [lines 139-141](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Hyperelastic/Volume/SNH.cpp#L139-L141) in `src/Hyperelastic/Volume/SNH.cpp` to:
 ```
   for (int i = 0; i < 9; i++)
       if (eigenvalues(i) < 0.0)
           eigenvalues(i) = -eigenvalues(i);  
 ```
-please see [https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Hyperelastic/Volume/SNH.cpp#L139-L141],
 
 3. Change line 54 in `src/Scenes/QUASISTATIC_STRETCH.h` to:
 ```
@@ -97,16 +113,16 @@ So we increase the Poisson's ratio to roughly 0.495.
 ```
 So we create a large initial deformation (feel free to try an even larger deformation).
 
-4. Uncomment line 287 in `projects/simulateScene/simulateScene.cpp` to choose the quasistatic test:
+4. Uncomment [line 287](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/projects/simulateScene/simulateScene.cpp#L287) in `projects/simulateScene/simulateScene.cpp` to choose the quasistatic test:
 ```
   scene = new QUASISTATIC_STRETCH();
 ```
-(https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/projects/simulateScene/simulateScene.cpp#L287)
 
 5. Run `make mac` or `make linux` to run the test (see HOBAK's readme).
 
 * Note: HOBAK doesn't include a line search but our method seems to often work fine without one.
 
+</details>
 
 ## Citation
 ```
