@@ -1,6 +1,6 @@
 # Stabler Neo-Hookean Simulation: <br> Absolute Eigenvalue Filtering for Projected Newton
 
-### [Project Page](https://www.cs.columbia.edu/cg/local-deformation/)  | [Paper](https://arxiv.org/abs/2306.06550)
+### [Project Page](https://www.cs.columbia.edu/cg/local-deformation/)  | [Paper](http://www.cs.columbia.edu/cg/abs-eval/paper_low_res.pdf)
 
 <img src="https://github.com/honglin-c/abs-eval/blob/main/.github/images/teaser.png" width="800">
 
