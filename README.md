@@ -88,22 +88,23 @@ So we project the negative eigenvalue to its absolute value if we set the eigenv
 <h3>Yet another way to verify our method (which is slightly more complicated) </h3>
 </summary>
 
+Our method can also be verified by modifying the code of [Hobak](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636) [Kim and Eberle 2020].
+
 1. Git clone [Hobak](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636) in a different folder.
 
-2. Change [lines 139-141](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Hyperelastic/Volume/SNH.cpp#L139-L141) in `src/Hyperelastic/Volume/SNH.cpp` to:
+2. Implement our abs eigenvalue projection: Change [lines 139-141](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Hyperelastic/Volume/SNH.cpp#L139-L141) in `src/Hyperelastic/Volume/SNH.cpp` to:
 ```
   for (int i = 0; i < 9; i++)
       if (eigenvalues(i) < 0.0)
           eigenvalues(i) = -eigenvalues(i);  
 ```
 
-3. Change line 54 in `src/Scenes/QUASISTATIC_STRETCH.h` to:
+3. Increase the Poisson's ratio to roughly 0.495: Change [line 54](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Scenes/QUASISTATIC_STRETCH.h#L54) in `src/Scenes/QUASISTATIC_STRETCH.h` to:
 ```
   _hyperelastic = new VOLUME::SNH(1.0, 100.0);
 ```
-So we increase the Poisson's ratio to roughly 0.495.
 
-3. Change lines 80-84 in `src/Scenes/QUASISTATIC_STRETCH.h` to:
+3. Create a large initial deformation: Change [lines 80-84](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/src/Scenes/QUASISTATIC_STRETCH.h#L80-L84) in `src/Scenes/QUASISTATIC_STRETCH.h` to:
 ```
   if (_frameNumber < 1)
   {
@@ -111,7 +112,7 @@ So we increase the Poisson's ratio to roughly 0.495.
     return;
   }
 ```
-So we create a large initial deformation (feel free to try an even larger deformation).
+Feel free to try an even larger deformation. :)
 
 4. Uncomment [line 287](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636/projects/simulateScene/simulateScene.cpp#L287) in `projects/simulateScene/simulateScene.cpp` to choose the quasistatic test:
 ```

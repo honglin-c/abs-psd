@@ -281,6 +281,8 @@ int main(int argc, char** argv)
 
         std::ofstream output_file_iter(output_folder + "iter/" + output_tag + ".txt");
         output_file_iter << (hist.size()-1) << std::endl;
+
+        exit(0);
       }
     });
 
