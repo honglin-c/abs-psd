@@ -59,8 +59,8 @@ For more options, please see
 <h3>What do we modify in TinyAD to achieve absolute eigenvalue projection? </h3>
 </summary>
 
-We clone TinyAD (https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
-then comment out and change [lines 71-75 in `TinyAD/include/TinyAD/Utils/HessianProjection.hh`]([https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75]) to:
+We clone [TinyAD](https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
+then comment out and change [lines 71-75](https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75) in `TinyAD/include/TinyAD/Utils/HessianProjection.hh` to:
 ```
   if (_eigenvalue_eps < 0) {
       // project to absolute value if the eigenvalue threshold is less than 0
