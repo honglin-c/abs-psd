@@ -15,9 +15,9 @@ Official implementation for the paper:
 > <sup>1</sup>Columbia University, 
 <sup>2</sup>University of Toronto,  
 <sup>3</sup>Roblox Research, 
-<br> 
 <sup>4</sup>University of British Columbia, 
-<sup>5</sup>NVIDIA,
+<br> 
+> <sup>5</sup>NVIDIA,
 <sup>6</sup>Adobe Research
 <br>
 > SIGGRAPH 2024 (Conference Track)
