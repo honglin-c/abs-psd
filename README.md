@@ -56,7 +56,7 @@ For more options, please see
 
 <details>
 <summary>
-<h2>What do we modify in TinyAD to achieve absolute eigenvalue projection? <\h2>
+<h2>What do we modify in TinyAD to achieve absolute eigenvalue projection? </h2>
 </summary>
 
 We clone TinyAD (https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
