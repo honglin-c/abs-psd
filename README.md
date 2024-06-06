@@ -79,7 +79,7 @@ then comment out and change [lines 71-75](https://github.com/patr-schm/TinyAD/bl
       }
   }
 ```
-So we project to absolute value if the eigenvalue threshold is less than 0, and to a small value epsilon (e.g., 0 or 1e-3) otherwise.
+So we project the negative eigenvalue to its absolute value if we set the eigenvalue threshold to be negative, and clamp it to 0 or a small positive value (e.g., 1e-3) if the threshold is positive.
 
 </details>
 
