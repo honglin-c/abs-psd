@@ -69,7 +69,7 @@ void project_positive_definite(
         for (Eigen::Index i = 0; i < _H.rows(); ++i)
         {
             if (_eigenvalue_eps < 0) {
-                // project to absolute value
+                // project to absolute value if the eigenvalue threshold is less than 0
                 if (D(i, i) < 0)
                 {
                     D(i, i) = -D(i, i);
@@ -77,7 +77,7 @@ void project_positive_definite(
                 }
             }
             else {
-                // project to epsilon
+                // project to epsilon otherwise
                 if (D(i, i) < _eigenvalue_eps)
                 {
                     D(i, i) = _eigenvalue_eps;
