@@ -56,7 +56,7 @@ For more options, please see
 
 <details>
 <summary>
-## What do we modify in TinyAD to achieve absolute eigenvalue projection?
+<h2>What do we modify in TinyAD to achieve absolute eigenvalue projection? <\h2>
 </summary>
 
 We clone TinyAD (https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
@@ -85,7 +85,7 @@ So we project to absolute value if the eigenvalue threshold is less than 0, and 
 
 <details>
 <summary>
-## Yet another way to verify our method (which is slightly more complicated)
+<h2>Yet another way to verify our method (which is slightly more complicated) </h2>
 </summary>
 
 1. Git clone [Hobak](https://github.com/theodorekim/HOBAKv1/blob/8420c51b795735d8fb912e0f8810f935d96fb636) in a different folder.
