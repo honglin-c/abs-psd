@@ -1,6 +1,6 @@
 # Stabler Neo-Hookean Simulation: <br> Absolute Eigenvalue Filtering for Projected Newton
 
-### [Project Page](https://www.cs.columbia.edu/cg/abs-psd/)  | [Paper](http://www.cs.columbia.edu/cg/abs-psd/paper_low_res.pdf)
+### [Project Page](https://www.cs.columbia.edu/cg/abs-psd/)  | [Paper](https://arxiv.org/abs/2406.05928)
 
 <img src="https://github.com/honglin-c/abs-psd/blob/main/.github/images/teaser.png" width="800">
 
@@ -56,14 +56,15 @@ For more options, please see
 
 <details>
 <summary>
-<h3>What do we modify in TinyAD to achieve absolute eigenvalue projection? </h3>
+<h3>What do we modify in TinyAD to add our absolute eigenvalue projection? </h3>
 </summary>
 
+As a research prototype, we choose to make minimal modifications in TinyAD when adding our new projection method. 
 We clone [TinyAD](https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735D) to the project folder,
-then comment out and change [lines 71-75](https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75) in `TinyAD/include/TinyAD/Utils/HessianProjection.hh` to:
+and comment out and change [lines 71-75](https://github.com/patr-schm/TinyAD/blob/29417031c185b6dc27b6d4b684550d844459b735/include/TinyAD/Utils/HessianProjection.hh#L71-L75) in `TinyAD/include/TinyAD/Utils/HessianProjection.hh` to:
 ```
   if (_eigenvalue_eps < 0) {
-      // project to absolute value if the eigenvalue threshold is less than 0
+      // project to absolute value if the eigenvalue threshold is set to be less than 0
       if (D(i, i) < 0)
       {
           D(i, i) = -D(i, i);
@@ -79,7 +80,7 @@ then comment out and change [lines 71-75](https://github.com/patr-schm/TinyAD/bl
       }
   }
 ```
-So we project the negative eigenvalue to its absolute value if we set the eigenvalue threshold to be negative, and clamp it to 0 or a small positive value (e.g., 1e-3) if the threshold is positive.
+Thus we simply use `eps < 0` as a flag for absolute eigenvalue projection.
 
 </details>
 
@@ -122,6 +123,15 @@ Feel free to try an even larger deformation. :)
 5. Run `make mac` or `make linux` to run the test (see HOBAK's readme).
 
 * Note: HOBAK doesn't include a line search but our method seems to often work fine without one.
+
+</details>
+
+<details>
+<summary>
+<h3>When does our absolute eigenvalue projection work best? </h3>
+</summary>
+
+Our method stabilizes and accelerates the optimization of stable Neo-Hookean energy when the energy landscape is *highly nonconvex*. In other words, our absolute eigenvalue projection usually achieves more speedup when *the Poisson's ratio is high, the volume change is large and the mesh resolution is high*, as each of them will increase the nonconvexity of the stable Neo-Hookean energy (see Sec.6 of our paper). For other cases where the energy landscape is almost convex, our method may slightly damp the convergence (see Sec.8). 
 
 </details>
 
